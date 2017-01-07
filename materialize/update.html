@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $(forward).mousedown(function(){
+    $.get("http://140.120.54.157:8001/program/carcontroller.php?status=1",function(data,status){
+      
+	  
+    });
+  });
+  $(forward).mouseup(function(){
+    $.get("http://140.120.54.157:8001/program/carcontroller.php?status=4",function(data,status){
+      
+	  
+    });
+  });
+  $(backward).mousedown(function(){
+    $.get("http://140.120.54.157:8001/program/carcontroller.php?status=5",function(data,status){
+      
+	  
+    });
+  });
+  $(backward).mouseup(function(){
+    $.get("http://140.120.54.157:8001/program/carcontroller.php?status=4",function(data,status){
+      
+	  
+    });
+  });
+  $(right).mousedown(function(){
+    $.get("http://140.120.54.157:8001/program/carcontroller.php?status=2",function(data,status){
+      
+	  
+    });
+  });
+  $(right).mouseup(function(){
+    $.get("http://140.120.54.157:8001/program/carcontroller.php?status=4",function(data,status){
+      
+	  
+    });
+  });
+  $(left).mousedown(function(){
+    $.get("http://140.120.54.157:8001/program/carcontroller.php?status=3",function(data,status){
+      
+	  
+    });
+  });
+  $(left).mouseup(function(){
+    $.get("http://140.120.54.157:8001/program/carcontroller.php?status=4",function(data,status){
+      
+	  
+    });
+  });
+});
+</script>
+</head>
+<style>  
+		html,body{  
+		margin:0px;  
+		height:100%;  
+		} 
+		#freshtilledsoil_embed_widget{  
+		width:25%;  
+		height:25%;  
+		MARGIN: 0px auto;  
+		background-color:#e0f7fa;  
+		}  		
+		#bg{  
+		width:100%;  
+		height:100%;  
+		MARGIN: 0px auto;  
+		background-color:#e0f7fa;  
+		}  
+</style>  
+<body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+<div id="bg" align="center" valign="center" >
+<div  id="freshtilledsoil_embed_widget" class="video-chat-widget"style="position : absolute"></div>
+<script id="fts" src="http://freshtilledsoil.com/embed/webrtc-v5.js?r=FTS0316-CZ6NqG97"></script>
+<button class="btn-floating btn-large waves-effect waves-light waves-light" id="forward" style="height:100px;width:100px;position:relative; left:0px; top: 200px; " >Forward</button><br>
+<button class="btn-floating btn-large waves-effect waves-light waves-light" id="backward" style="height:100px;width:100px;position:relative; left:0px; top: 400px; " >Backward</button><br>
+<button class="btn-floating btn-large waves-effect waves-light waves-light" id="left" style="height:100px;width:100px;position:relative; left:-200px; top: 150px; " >Left</button><br>
+<button class="btn-floating btn-large waves-effect waves-light waves-light" id="right" style="height:100px;width:100px;position:relative; left:200px; top: 50px; " >Right</button>
+</div>
+
+</body>
+</html>
