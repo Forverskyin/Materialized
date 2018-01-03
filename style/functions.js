@@ -34,9 +34,7 @@ $(function(){
 });
 
 var treeHeight = 0;
-function set_size(){
-	$("body").css("zoom","80%");	
-}
+
 $(window).resize(function(){
 	var b=$(window).width();
 	var a=$(window).height();
