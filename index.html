@@ -1,173 +1,90 @@
-
-<!DOCTYPE html>
+﻿<!DOCTYPE HTML>
 <html>
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, user-scalable=no">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
- 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css" />
-  <link rel="stylesheet" href="/vendor/waves/waves.min.css" />
-  <link rel="stylesheet" href="/css/nativedroid2.css" />
-    <style>
-    html{
-      height:100%;
-    }
-    body{
-      background:url('http://bossfight.co/wp-content/uploads/2016/07/boss-fight-free-high-quality-stock-images-photos-photography-star-sky.jpg');
-      background-size:cover;
-      background-attachment: fixed;
-      height:100%;
-    }
-    .ui-content{
-      background-color:rgb(0,0,0,0);
-    }
-    #footer{
-           position : fixed;
-           padding:0 10px;
-           z-index : 3;
-    }
-    .name{
-      width:100%;
-      text-align:right;
-      font-size:12px;
-      color:#fff;
-      text-shadow:#000 0 0 5px,#000 0 0 2px;
-      margin:10px 15px 10px 0;
-    }
-    .me .name{
-      color:#ff5;
-      text-align:left;
-      margin:10px 0 10px 10px;
-    }
-    .message{
-      text-shadow:none;
-      box-sizing:border-box;
-      width:100%;
-      padding:10px 20px;
-      border-radius:10px;
-      margin-bottom:15px;
-      background:rgba(255,255,255,.6);
-      position:relative;
-      color:#000
-    }
-    .message::before{
-      content:'';
-      width:0;
-      height:0;
-      position:absolute;
-      bottom:-20px;
-      right:15px;
-      border-width:10px 7px;
-      border-style:solid;
-      border-top-color:rgba(255,255,255,.6);
-      border-left-color:rgba(0,0,0,0);
-      border-right-color:rgba(0,0,0,0);
-      border-bottom-color:rgba(0,0,0,0);
-    }
-    .me .message{
-      background:rgba(255,255,150,.6);
-    }
-    .me .message::before{
-      border-top-color:rgba(255,255,150,.6);
-      left:15px;
-      right:auto;
-    }
-  </style>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>     
-  <script src="/vendor/waves/waves.min.js"></script>
-  <script src="/js/nativedroid2.js"></script>
-  <script src="/nd2settings.js"></script>    
-  <script>
-    (function (document, $) {
-
-      var today = new Date;
-      var genid = "iden" + today.getTime(); 
-      $(document).on('pagecreate', '#home', function () {
-        loadJS('https://www.gstatic.com/firebasejs/3.6.5/firebase.js', function () {
-           var config = {
-       apiKey: "AIzaSyB5WrxetT4dk9SpgVh5jeYgrrFVpeAh7cw",
-       authDomain: "connection-e24e3.firebaseapp.com",
-       databaseURL: "https://connection-e24e3.firebaseio.com",
-       storageBucket: "connection-e24e3.appspot.com",
-       messagingSenderId: "700902636980"
-  };
-         firebase.initializeApp(config);
-          var myDataRef =  firebase.database().ref();
-
-          $('#messageinput').keypress(function (e) {
-            if (e.keyCode == 13) {
-              var userid = genid;
-              var name = $('#nameinput').val();
-              var text = $('#messageinput').val();
-              myDataRef.push({
-                name: name,
-                text: text,
-                userid: userid 
-              });
-              $('#messageinput').val('');
-            }
-          });
-          myDataRef.on('child_added', function (snapshot) {
-            var message = snapshot.val();
-            displayChatMessage(message.name, message.text, message.userid);
-          });
-
-          function displayChatMessage(name, text, userid) {
-            $('#messagesDiv').prepend(
-              '<div class="' + userid + '">' +
-              '<div class="message">' + text + '</div>' +
-              '<div class="name">' + name + '</div>' +
-              '</div>'
-            );
-            if (userid == genid) {
-              $('.' + userid).addClass('me');}
-       
-          };
-
-        });
-      });
-
-
-      function loadJS(src, callback) {
-        var head = document.getElementsByTagName("head")[0],
-          script = document.createElement('script');
-        script.src = src;
-        script.onload = callback;
-        
-        head.appendChild(script);
-        head.removeChild(script);
-
-              }
-
-    }(document, jQuery));
-  </script>
-  <title>EZo App</title>
+    <title>Happy birthday</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link href="style/default.css" type="text/css" rel="stylesheet">
 </head>
 
-<body>
-   <div id="home" data-role="page">
-    <div >
-      <p>NCHU MIS Online</p>
-          </div>
-    <div id="footer" class="input-field col s6">
-    <input type="text" id="nameinput" class="validate">
-    <label for="nameinput">name</label>
-    <input type="text" id="messageinput" placeholder="Message">
-    </div>
-    </br></br></br></br></br></br>
+<body style="background:#000000;">
+    <script type="text/javascript" src="style/jquery.js"></script>
+    <script type="text/javascript" src="style/garden.js"></script>
+    <script type="text/javascript" src="style/functions.js"></script>
+	 
+    <div id="mainDiv">
+        <div id="content">
+            <strong><div id="code">
+				<div class="reset">
+                <span class="comments">/*</span>
+                <span class="space"/><span class="comments">Today is a special day.</br>
+                <span class="space"/><span class="comments">*  So I write some codes down..</span>
+                <span class="space"/><span class="comments">*/</span><br><br />
+                <span class="code-color">Day today = </span><span class="keyword">new</span><span class="code-color"> Day(</span><span class="string">"Birthday"</span><span class="code-color">);</span><br />
+                <span class="code-color">Birthday_Girl u = </span><span class="keyword">new</span><span class="code-color"> Birthday_Girl(</span><span class="string">"Yang-en"</span><span class="code-color">);</span><br />
+                <span class="comments">// On January 06, 2018</span><br />
+                <span class="code-color">Web card = </span><span class="keyword">new</span><span class="code-color"> Web(</span><span class="string">"for"</span><span class="code-color">,u);</span><br />
+                <span class="comments">// I designed a birthday card</span><br />
+                <span class="code-color">u.feel();</span>
+                <span class="comments">// Do you like it xD</span><br />
+                <span class="keyword">var</span><span class="code-color"> wish=today.write();</span><br />
+                <span class="comments">// I have some greetings to say to you</span><br />
+                <span class="keyword">$</span><span class="code-color">(</span><span class="string">"card"</span><span class="code-color">).append(</span><span class="string">wish</span><span class="code-color">);</span><br />
+                <span class="comments">/* First of all,<br>Wish you happy birthday!</span>*/<br />
+				<span class="code-color">Show(</span><span class="string">"Happy Birthday!"</span><span class="code-color">);</span><br>
+                <span class="comments">// No matter how bad things were in prev. days,</span><br />
+                <span class="code-color">today.prev(</span><span class="string">"FuckOff!"</span><span class="code-color">);</span><br />
+				<span class="comments">// how tired you were in this semester,</span><br />
+                <span class="code-color">Semester.preview(</span><span class="string">"Suck!!"</span><span class="code-color">);</span><br />
+				<span class="comments">// how many final reports you have to complete</span><br />
+				<span class="code-color">Semester.Final_Report.handle(</span><span class="string">"Fight!!!"</span><span class="code-color">);</span><br />
+				
+				<span class="comments">/* Anyway,this is your day~<br>You are the main character! */</span><br />
+				<span class="code-color">today.highlight(</span><span class="string">"Yang-en"</span><span class="code-color">);</span><br>
+                <span class="comments">// Just have much much much fun in this rare day!!</span><br />
+				<span class="code-color">So_Be_funnnnnnnnn(</span><span class="string">"Yang-en"</span><span class="code-color">);</span>
+                
+			</div>
+            </div></strong>
+            <div id="loveHeart">
+                <canvas id="garden"></canvas>
+                <div id="words" style="position:relative;">
+                    <div id="messages" style="position:absolute;">
 
-    <div role="main" class="ui-content">
-      <div id="messagesDiv" style="z-index : 1"></div>
+                    <strong style="color:#fffafa !important">Wish all your dreams come true</strong>
+                      
+                    <div class="signature"id="HBD" style="position:absolute">
+					
+                        <strong style="color:#fffafa">Happy Birthday</strong><br/>
+						<span class="signature" id="for" ><strong>For 洋恩</strong><br></span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </div>
-    
-  </div>
+	
+    <script type="text/javascript">
+        var offsetX = $("#loveHeart").width() / 2;
+        var offsetY = $("#loveHeart").height() / 2 - 55;
+        
+        if (!document.createElement('canvas').getContext) {
+            var msg = document.createElement("div");
+            msg.id = "errorMsg";
+            msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+            document.body.appendChild(msg);
+            $("#code").css("display", "none")
+            
+        } else {
+            setTimeout(function () {
+                adjustWordsPosition();
+                startHeartAnimation();
+            }, 0);
+            
+            adjustCodePosition();
+            $("#code").typewriter();
+        }
+    </script>
+	</div>
 </body>
-
 </html>
